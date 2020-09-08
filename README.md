@@ -56,6 +56,8 @@ In Python, for loops are handled a bit different than they are in any other lang
 
     def for_loop_example():
 
+## While Loops
+In a while loop, the loop is continuously run until a certain condition is not met. If an index is being used, it is important to increment or decrement the index to prevent an infinite loop from occuring.
 
 
 ## the range function
