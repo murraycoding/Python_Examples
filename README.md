@@ -1,8 +1,14 @@
-# Introduction to Python
+# Python Notes
+folder_name = Regular Python
+This will be where all notes will be regarding things which are normally in Python (not including the standard library you can import from). If any importing needs to happen in order to use a particular feature, please refer to the notes on Python Libraries later in the notes.
 
-## What is Python?
+## Basics
+All of the basics of Python. Things to know just to get started writing a simple program
 
-## Interactive Mode
+### The print method
+The print statement is one of the most fundamental things in Python. This can be used for debugging, writing things to a command line and many others. 
+
+### Interactive Mode
 
 You can use python without executing a prewritten program or script. In order to simply type python commands, in the command line type 'python'. Depending on the system path on your computer, this may be different (possibly 'python3'). Press enter after typing 'python' to enter 'interactive mode'. In this mode, you can pass any python commands you would if it were a regular python function. In the example below, I used PowerShell to write a small program to showcase interactive mode. The '>>>' symbol represents the *primary prompt*. The '...' represents the *secondard prompt*.
 
@@ -16,18 +22,18 @@ You can use python without executing a prewritten program or script. In order to
     ...     print('x is not equal to 4')
     x is not equal to 4
 
-## Data Types
+### Data Types
 
-### Numbers
+#### Numbers
 
-### Strings
+#### Strings
 
-### Booleans
+#### Booleans
 
 
-# Contol flow
+## Contol flow
 
-## If Statements
+### If Statements
 
 Here is an example of an if statement.
 
@@ -49,60 +55,35 @@ This is an example of an else if statement.
         elif x > 4:
             print(f"{x} os greater than 4 and less than or equal to 10.")
     
-
-## For Loops
+### For Loops (example done)
 
 In Python, for loops are handled a bit different than they are in any other language. Here is the standard for loop interating over a list. In the example below, a list is defined named 'nums' and I will loop through the nums list and print it out. Notice is this for loop the index references the object itself. 
 
     def for_loop_example():
 
-## While Loops
+### While Loops (example done)
 In a while loop, the loop is continuously run until a certain condition is not met. If an index is being used, it is important to increment or decrement the index to prevent an infinite loop from occuring.
 
+### Break/Continue Statemetns and Else in loops
 
-## the range function
+### pass Statements
 
-## Break/Continue Statemetns and Else in loops
+## Functions/Methods
 
-## pass Statements
+### The Range Function
+The range function will generate a list of numbers from one value to another. The function can take one or two parameters. If one is given, then the list is from zero 
 
-# Functions
+### List Methods
 
-## What is a function?
+#### Append
+Append is probably the most common list method in many languages. In Javascript, for example, it is called 'push'. This method adds one or more elements to the end of an already existing list. If the original list is empty, whatever is added becomes the list itself. See the example below for how the append method works.
 
-
-## Lambda Functions
-
-Often times you are required to include a function as an argument in another function. The classic example is the map function. In the map function takes two parameters.
-
-1. The function to run each element through
-2. The iterable full of the elements to be run through the function
-
-You can pass any number of iterables in a number of different formats (list, tuple, etc.) in the second parameter.
-
-There are three examples below. The first is an example of generating a list of the first 10 square numbers using a for loop (all of the examples will have the same output, they will just be shown in different methods). The second method will use a map function and a separate square function to square the numbers. The last example will use the same map function, but it will use a lambda function to square the numbers.
-
-    # Example 1: For Loop
-
-    squares = []
-
-    for x in range(1,11):
-        squares.append(x**2)
+    arr1 = ["one","two","three","four"]
+    arr1.append("five")
     
-    # Example 2: Map Function - No Lambda
-    def square(x):
-        return x**2
+    print(arr1) # Result = ["one","two","three","four","five"]
 
-    squares = list(map(square, range(1,11)))
-
-    # Example 3: Map Function - With Lambda
-
-    squares = list(map(lambda x : x**2, range(1,11)))
-
-
-## Special Functions  Change this name later
-
-### The Zip Function
+#### The Zip Function
 
 The zip function takes two or more interables of any size. The function will return a zip object, which is an interable of tuples. Each tuple in the interable will have one element from each of the iterables passed into the zip function (The function takes the element in order, i.e. The first tuple will be all of the first elements of the iterables, the second tuple will be all of the second elements in the iterables). Keep in mind that the number of elements in each tuple will be the number of iterables passed to the zip function in the first place and the number of tuples as a result of the zip function will be the length of the shortes iterable of the iterables passed to the zip function. 
 
@@ -145,13 +126,66 @@ There are other ways to use the zip function. See the for loops below for two ex
     Five and Six
 
 
-# Data Structures
+### Lambda Functions
 
-# Input and Output
+Often times you are required to include a function as an argument in another function. The classic example is the map function. In the map function takes two parameters.
 
-# Errors and Exceptions
+1. The function to run each element through
+2. The iterable full of the elements to be run through the function
 
-## Try/Except
+You can pass any number of iterables in a number of different formats (list, tuple, etc.) in the second parameter.
+
+There are three examples below. The first is an example of generating a list of the first 10 square numbers using a for loop (all of the examples will have the same output, they will just be shown in different methods). The second method will use a map function and a separate square function to square the numbers. The last example will use the same map function, but it will use a lambda function to square the numbers.
+
+    # Example 1: For Loop
+
+    squares = []
+
+    for x in range(1,11):
+        squares.append(x**2)
+    
+    # Example 2: Map Function - No Lambda
+    def square(x):
+        return x**2
+
+    squares = list(map(square, range(1,11)))
+
+    # Example 3: Map Function - With Lambda
+
+    squares = list(map(lambda x : x**2, range(1,11)))
+    
+### Decorators
+
+#### What is a decorator?
+A decorator is a function which wraps around another function. It essentially provides extra functionality to an already existing function. With a decorator, you can write it once and apply it to as many other functions as you would like. Below is an example of absolute value being used as a decorator. Notice how the two functions ('add_no_dec' and 'add_dec') are the same (and have the same inputs). The only difference is the decorator is added before one of the function declarations.
+
+    def abs_val(func): # name of function becomes name of decorator
+        def wrapper(a,b):
+            # takes the abs_val of the result of the function being wrapped
+            return abs(func(a,b)) 
+        return wrapper
+
+    def add_no_dec(a,b):
+        return a + b
+
+    @abs_val    # the decorator always has an @ symbol followed by the name of the decorator function
+    def add_dec(a,b):
+        return a + b
+
+    print('No Decorator')
+    print(add_no_dec(-2,-3)) -> -5
+
+    print('Decorator')
+    print(add_dec(-2,-3)) -> 5
+
+
+## Data Structures
+
+## Input and Output
+
+## Errors and Exceptions
+
+### Try/Except
 Often times when bulding a real program, on a webpage or local application, the user will enter something wrong (i.e. a string instead of a number) or another error comes up. In these cases, using a 'try/except block' can help prevent the program from crashing. Below is the general process of how the code works. In the example, the user is asked to input a number (which python will convert to an int). If the user enters something which cannot be converted to an integer, an error will occur. Without eh try/except block, the program would crash causing an error. With this extra code, we can plan for the error and print something esle out to the user to inform them of the error.
 
     try:
@@ -189,61 +223,23 @@ In the example below a function is defined which will attempt to divide two numb
 
 It is considered a best practice in Python to make sure ALL except statements have an error after them. Without this, catching ANY error would run the same code. This could actually cause more errors in the code. See below for the list of all errors (and more will be added as needed).
 
-## List of Errors for Except Statement
+### List of Errors for Except Statement
 
 1. ValueError: Descrition here
 2. ZeroDivisionError
 
-# Classes
+## Classes
 
 
+## Scope
 
-# Standard Library
+### Global Scope
 
-# Virtual Environments
-
-
-
-
-# Decorators
-
-## What is a decorator?
-
-A decorator is a function which wraps around another function. It essentially provides extra functionality to an already existing function. With a decorator, you can write it once and apply it to as many other functions as you would like. Below is an example of absolute value being used as a decorator. Notice how the two functions ('add_no_dec' and 'add_dec') are the same (and have the same inputs). The only difference is the decorator is added before one of the function declarations.
-
-    def abs_val(func): # name of function becomes name of decorator
-        def wrapper(a,b):
-            # takes the abs_val of the result of the function being wrapped
-            return abs(func(a,b)) 
-        return wrapper
-
-    def add_no_dec(a,b):
-        return a + b
-
-    @abs_val    # the decorator always has an @ symbol followed by the name of the decorator function
-    def add_dec(a,b):
-        return a + b
-
-    print('No Decorator')
-    print(add_no_dec(-2,-3)) -> -5
-
-    print('Decorator')
-    print(add_dec(-2,-3)) -> 5
-
-
-
-# Files
-
-
-# Scope
-
-## Global Scope
-
-## Local Scope
+### Local Scope
 
 By default, each variable created only has local scope. This, for example, means that if a variable is created in a function, it is only accessible from the function. There are ways to change this should the variable be needed outside the scope of the function.
 
-## Nonlocal Scope
+### Nonlocal Scope
 
 "Nonlocal" is a keyword you can type before a variable name to change the scope of the variable. Consider the following example of a function which returns another function.
 
@@ -272,5 +268,19 @@ In creating the square function, I will attempt to pass a different value of n (
     cubed = exp(3)
 
     cubed(4) -> 16   # not equal to 64 as intended
+    
+# Python Libraries
+
+## Standard Library
+These are the notes on the python standard library
+
+## Pandas
+Please note that when using Pandas, it is a common practice to use an alias instead of the whole "Pandas" word. See the code below for the pandas import statement.
+    
+    import pandas as pd
+    
+### How to read CSV files using Pandas
+
+
 
 
