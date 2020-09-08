@@ -1,2 +1,274 @@
-# Python_Examples
-A repo of examples of different concepts in python. This will act as a digital notebook (sort of).
+# Introduction to Python
+
+## What is Python?
+
+## Interactive Mode
+
+You can use python without executing a prewritten program or script. In order to simply type python commands, in the command line type 'python'. Depending on the system path on your computer, this may be different (possibly 'python3'). Press enter after typing 'python' to enter 'interactive mode'. In this mode, you can pass any python commands you would if it were a regular python function. In the example below, I used PowerShell to write a small program to showcase interactive mode. The '>>>' symbol represents the *primary prompt*. The '...' represents the *secondard prompt*.
+
+    PS C:\Users\bmurr> python
+    Python 3.8.5 (tags/v3.8.5:580fbb0, Jul 20 2020, 15:57:54) [MSC v.1924 64 bit (AMD64)] on win32
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> x = 5
+    >>> if x = 4:
+    ...     print('x is equal to 4')
+    ... else:
+    ...     print('x is not equal to 4')
+    x is not equal to 4
+
+## Data Types
+
+### Numbers
+
+### Strings
+
+### Booleans
+
+
+# Contol flow
+
+## If Statements
+
+Here is an example of an if statement.
+
+    def example_function():
+        x = 5
+
+        if x > 4:
+            print(f"{x} is greater than 4")
+        else:
+            print(f"{x} is not greater than 4")
+
+This is an example of an else if statement.
+
+    def example_function():
+        x = 5
+
+        if x > 10:
+            print(f"{x} is greater than 10")
+        elif x > 4:
+            print(f"{x} os greater than 4 and less than or equal to 10.")
+    
+
+## For Loops
+
+In Python, for loops are handled a bit different than they are in any other language. Here is the standard for loop interating over a list. In the example below, a list is defined named 'nums' and I will loop through the nums list and print it out. Notice is this for loop the index references the object itself. 
+
+    def for_loop_example():
+
+
+
+## the range function
+
+## Break/Continue Statemetns and Else in loops
+
+## pass Statements
+
+# Functions
+
+## What is a function?
+
+
+## Lambda Functions
+
+Often times you are required to include a function as an argument in another function. The classic example is the map function. In the map function takes two parameters.
+
+1. The function to run each element through
+2. The iterable full of the elements to be run through the function
+
+You can pass any number of iterables in a number of different formats (list, tuple, etc.) in the second parameter.
+
+There are three examples below. The first is an example of generating a list of the first 10 square numbers using a for loop (all of the examples will have the same output, they will just be shown in different methods). The second method will use a map function and a separate square function to square the numbers. The last example will use the same map function, but it will use a lambda function to square the numbers.
+
+    # Example 1: For Loop
+
+    squares = []
+
+    for x in range(1,11):
+        squares.append(x**2)
+    
+    # Example 2: Map Function - No Lambda
+    def square(x):
+        return x**2
+
+    squares = list(map(square, range(1,11)))
+
+    # Example 3: Map Function - With Lambda
+
+    squares = list(map(lambda x : x**2, range(1,11)))
+
+
+## Special Functions  Change this name later
+
+### The Zip Function
+
+The zip function takes two or more interables of any size. The function will return a zip object, which is an interable of tuples. Each tuple in the interable will have one element from each of the iterables passed into the zip function (The function takes the element in order, i.e. The first tuple will be all of the first elements of the iterables, the second tuple will be all of the second elements in the iterables). Keep in mind that the number of elements in each tuple will be the number of iterables passed to the zip function in the first place and the number of tuples as a result of the zip function will be the length of the shortes iterable of the iterables passed to the zip function. 
+
+    arr1 = ["One","Three","Five"]
+    arr2 = ["Two","Four","Six","Seven"]
+
+    zipped = zip(arr1, arr2)
+
+    for x in zipped:
+        print(x)
+
+    # Result
+    ("One","Two")
+    ("Three", "Four")
+    ("Five", "Six")
+
+Notice the result did not print out "Seven". This is because the zip function only will contain n elements where n is the length of the shortest iterable. In this case, the length of arr1 is 3 and the length of arr2 is 4 so the result of the zip function contains 3 elements. This is just to ensure if can successfully take one element from each iterable.
+
+There are other ways to use the zip function. See the for loops below for two examples of this.
+
+    arr1 = ["One","Three","Five"]
+    arr2 = ["Two","Four","Six","Seven"]
+
+    # accessing the items in the for loop directly
+    for item in zip(arr1, arr2):
+        print item
+
+    # Result
+    ("One","Two")
+    ("Three", "Four")
+    ("Five", "Six")
+
+    #accessing each of the separate items in the tuples
+    for a, b in zip(arr1, arr2)
+        print f"{a} and {b}"
+
+    # Result
+    One and Two
+    Three and Four
+    Five and Six
+
+
+# Data Structures
+
+# Input and Output
+
+# Errors and Exceptions
+
+## Try/Except
+Often times when bulding a real program, on a webpage or local application, the user will enter something wrong (i.e. a string instead of a number) or another error comes up. In these cases, using a 'try/except block' can help prevent the program from crashing. Below is the general process of how the code works. In the example, the user is asked to input a number (which python will convert to an int). If the user enters something which cannot be converted to an integer, an error will occur. Without eh try/except block, the program would crash causing an error. With this extra code, we can plan for the error and print something esle out to the user to inform them of the error.
+
+    try:
+        num = int(input('Enter a number: '))
+        print(num)
+    except:
+        print('Invalid input.')
+
+While this is a simple example, you can use the same code to create more complex error handling. Beyond this basic concept, you can also write exception to handle particular types of errors. For example, if you are writing a calculator program, a user might type numbers in correctly but try to divide by zero. In this case, there should be a separate error message for divinding by zero and a separate message for invalid input. 
+
+In the example below a function is defined which will attempt to divide two numbers. In the code there are exceptions to make sure the user is inputing information correct. Since two numbers are required, if there is an error in the input, the function will just return 'Error' after printing the error message. After there are no errors for the inputs, the function will try to run the divide function with the exception if a divide by zero error comes up during the division.
+
+    def divide():
+        print('Please enter two integers.')
+        try:
+            a = int(input('a = '))
+        except ValueError as a_err:
+            print(f'Error = {a_err}')
+            return 'Error'                  # Only returning 'Error' because otherwise the output would be 'None'
+    
+        try:
+            b = int(input('b = '))
+        except ValueError as b_err:
+            print(f'Error = {b_err}')
+            return 'Error'
+
+
+        return a/b                          # There is no exception for ZeroDivisionError here because no actual division takes place until the function is run
+
+    try:
+        answer = divide()
+        print(answer)
+    except ZeroDivisionError as zero_err:    # Exception for ZeroDivisionError here
+        print(f'Error = {zero_err}')
+
+It is considered a best practice in Python to make sure ALL except statements have an error after them. Without this, catching ANY error would run the same code. This could actually cause more errors in the code. See below for the list of all errors (and more will be added as needed).
+
+## List of Errors for Except Statement
+
+1. ValueError: Descrition here
+2. ZeroDivisionError
+
+# Classes
+
+
+
+# Standard Library
+
+# Virtual Environments
+
+
+
+
+# Decorators
+
+## What is a decorator?
+
+A decorator is a function which wraps around another function. It essentially provides extra functionality to an already existing function. With a decorator, you can write it once and apply it to as many other functions as you would like. Below is an example of absolute value being used as a decorator. Notice how the two functions ('add_no_dec' and 'add_dec') are the same (and have the same inputs). The only difference is the decorator is added before one of the function declarations.
+
+    def abs_val(func): # name of function becomes name of decorator
+        def wrapper(a,b):
+            # takes the abs_val of the result of the function being wrapped
+            return abs(func(a,b)) 
+        return wrapper
+
+    def add_no_dec(a,b):
+        return a + b
+
+    @abs_val    # the decorator always has an @ symbol followed by the name of the decorator function
+    def add_dec(a,b):
+        return a + b
+
+    print('No Decorator')
+    print(add_no_dec(-2,-3)) -> -5
+
+    print('Decorator')
+    print(add_dec(-2,-3)) -> 5
+
+
+
+# Files
+
+
+# Scope
+
+## Global Scope
+
+## Local Scope
+
+By default, each variable created only has local scope. This, for example, means that if a variable is created in a function, it is only accessible from the function. There are ways to change this should the variable be needed outside the scope of the function.
+
+## Nonlocal Scope
+
+"Nonlocal" is a keyword you can type before a variable name to change the scope of the variable. Consider the following example of a function which returns another function.
+
+    def exp(n):
+        def num(x):
+            return x**n
+        return num
+
+    # this is the num function with a new name and n = 2
+    squared = exp(2)
+
+    squared(4) -> 16
+
+In the example above, n could only be altered when a new 'num' function was created by passing the value of n into the 'exp' function. With the 'nonlocal' keyword, it is possible now to pull the n into the num function. In the example below, we will define n to be equal to 2 and then pull the variable into the num function.
+
+In creating the square function, I will attempt to pass a different value of n (n=3). By doing this, it will be clear that the function 'num' is pulling the n variable from outside of its scope and setting n=2. 
+
+    def exp(n):
+        n=2   # outside local scope of 'num' function
+        def num(x):
+            nonlocal n  # special keyword that grabs n
+            return x**n
+        return num
+
+    # attemping to make a cubed function x^3
+    cubed = exp(3)
+
+    cubed(4) -> 16   # not equal to 64 as intended
+
+
