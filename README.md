@@ -272,7 +272,9 @@ In creating the square function, I will attempt to pass a different value of n (
 # Python Libraries
 
 ## Standard Library
-These are the notes on the python standard library
+These are the notes on the python standard library.
+
+### Random package
 
 ## Pandas
 Please note that when using Pandas, it is a common practice to use an alias instead of the whole "Pandas" word. See the code below for the pandas import statement.
@@ -280,6 +282,8 @@ Please note that when using Pandas, it is a common practice to use an alias inst
     import pandas as pd
     
 ### How to read CSV files using Pandas
+
+## NumPy
 
 
 
