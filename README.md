@@ -132,7 +132,7 @@ There are other ways to use the zip function. See the for loops below for two ex
     Five and Six
 
 
-### Lambda Functions
+### Lambda Functions (example done)
 
 Often times you are required to include a function as an argument in another function. The classic example is the map function. In the map function takes two parameters.
 
@@ -160,7 +160,7 @@ There are three examples below. The first is an example of generating a list of 
 
     squares = list(map(lambda x : x**2, range(1,11)))
     
-### Decorators
+### Decorators (general example done)
 
 #### What is a decorator?
 A decorator is a function which wraps around another function. It essentially provides extra functionality to an already existing function. With a decorator, you can write it once and apply it to as many other functions as you would like. Below is an example of absolute value being used as a decorator. Notice how the two functions ('add_no_dec' and 'add_dec') are the same (and have the same inputs). The only difference is the decorator is added before one of the function declarations.
@@ -193,7 +193,7 @@ A recursive function is one that calls itself as a part of the function. The fam
 
 ## Errors and Exceptions
 
-### Try/Except
+### Try/Except (example done)
 Often times when bulding a real program, on a webpage or local application, the user will enter something wrong (i.e. a string instead of a number) or another error comes up. In these cases, using a 'try/except block' can help prevent the program from crashing. Below is the general process of how the code works. In the example, the user is asked to input a number (which python will convert to an int). If the user enters something which cannot be converted to an integer, an error will occur. Without eh try/except block, the program would crash causing an error. With this extra code, we can plan for the error and print something esle out to the user to inform them of the error.
 
     try:
@@ -247,7 +247,7 @@ It is considered a best practice in Python to make sure ALL except statements ha
 
 By default, each variable created only has local scope. This, for example, means that if a variable is created in a function, it is only accessible from the function. There are ways to change this should the variable be needed outside the scope of the function.
 
-### Nonlocal Scope
+### Nonlocal Scope (example done)
 
 "Nonlocal" is a keyword you can type before a variable name to change the scope of the variable. Consider the following example of a function which returns another function.
 
