@@ -185,6 +185,8 @@ A decorator is a function which wraps around another function. It essentially pr
     print(add_dec(-2,-3)) -> 5
 
 ### Recursive Functions (example done)
+A recursive function is one that calls itself as a part of the function. The famous example of this is to find the nth fibonnaci number. The function to do this only is defined to find the number before it. Within the function, there is another function call to find the number before it, and so on. The only acception to this is if the function is trying to determine the first or second fibonnaci numbers. In this case, both the first and second are equal to 1. The example below described the function I am talking about. The code example will be in the algorithms folder.
+
 ## Data Structures
 
 ## Input and Output
