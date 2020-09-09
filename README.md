@@ -293,6 +293,24 @@ Please note that when using Pandas, it is a common practice to use an alias inst
 
 ## NumPy
 
+# Algorithms
+
+## Fibonacci Number
+The fibonacci number algorithm is a classic example of using recursive functions. In the function to find the nth fibonacci number, the function will call itself to find previous numbers in the sequence. The sequence is the following 1,1,2,3,5,8,13,21,... The example below gives (not the fastest) the most common approach to find the nth fibonacci number.
+
+    # function to find the nth fibonacci number
+
+    def fib_num(n):
+        # returns 1 if the function is looking for the first two numbers
+        if n == 1 or n == 2:
+            return 1
+        # the function will return the sum of the two numbers before it in the sequence
+        else:
+            return fib_num(n-2) + fib_num(n-1)
+
+    print(fib_num(8)) # Result = 21
+    
+## Next Algorithm
 
 
 
