@@ -70,8 +70,14 @@ In a while loop, the loop is continuously run until a certain condition is not m
 
 ## Functions/Methods
 
-### The Range Function
-The range function will generate a list of numbers from one value to another. The function can take one or two parameters. If one is given, then the list is from zero 
+### The Range Function (example done)
+The range function will produce a sequence of integers to loop over. The function can either take one, two or three parameters. Please see the example in the repo for more infroamtion. In the notes is included the example with three parameters.
+
+    # three parameters given = prints from start to end (not including end) but incremeting by the 3rd parameter
+    print("Three parameter range")
+    x = range(3,20,2)
+    for num in x:
+        print(num)
 
 ### List Methods
 
