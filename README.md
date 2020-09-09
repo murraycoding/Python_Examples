@@ -81,7 +81,7 @@ The range function will produce a sequence of integers to loop over. The functio
 
 ### List Methods
 
-#### Append
+#### Append (example done)
 Append is probably the most common list method in many languages. In Javascript, for example, it is called 'push'. This method adds one or more elements to the end of an already existing list. If the original list is empty, whatever is added becomes the list itself. See the example below for how the append method works.
 
     arr1 = ["one","two","three","four"]
