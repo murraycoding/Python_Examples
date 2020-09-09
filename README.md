@@ -89,7 +89,7 @@ Append is probably the most common list method in many languages. In Javascript,
     
     print(arr1) # Result = ["one","two","three","four","five"]
 
-#### The Zip Function
+#### The Zip Function (example done)
 
 The zip function takes two or more interables of any size. The function will return a zip object, which is an interable of tuples. Each tuple in the interable will have one element from each of the iterables passed into the zip function (The function takes the element in order, i.e. The first tuple will be all of the first elements of the iterables, the second tuple will be all of the second elements in the iterables). Keep in mind that the number of elements in each tuple will be the number of iterables passed to the zip function in the first place and the number of tuples as a result of the zip function will be the length of the shortes iterable of the iterables passed to the zip function. 
 
@@ -295,7 +295,7 @@ Please note that when using Pandas, it is a common practice to use an alias inst
 
 # Algorithms
 
-## Fibonacci Number
+## Fibonacci Number (example done)
 The fibonacci number algorithm is a classic example of using recursive functions. In the function to find the nth fibonacci number, the function will call itself to find previous numbers in the sequence. The sequence is the following 1,1,2,3,5,8,13,21,... The example below gives (not the fastest) the most common approach to find the nth fibonacci number.
 
     # function to find the nth fibonacci number
