@@ -70,6 +70,19 @@ In a while loop, the loop is continuously run until a certain condition is not m
 
 ## Functions/Methods
 
+A function is a basic concept in all conputer science. A function, in general, is something which takes a set of parameters, does something to them and then returns an output. It is considered good practice to not alter or edit the input variables. For example, the two functions below both do the same thing. In function_one the a variable is changed and in function_two, neither a or b is changed.
+    
+    # altering the value of a is considered a bad practice
+    def function_one(a,b):
+        a = a + b # finds the sum and sets it equal to a
+        return a
+    
+    # not altering the values of the input arguments is considered a good practice
+    def function_two(a,b):
+        return a + b # returns the sum
+        
+If no return statement is given, or if there is no value to return in the given return statement, Python will always return "None" to the command line. This is the same with class methods (which are just functions inside of classes - for more on this see the class section of these notes).
+
 ### The Range Function (example done)
 The range function will produce a sequence of integers to loop over. The function can either take one, two or three parameters. Please see the example in the repo for more infroamtion. In the notes is included the example with three parameters.
 
@@ -238,6 +251,42 @@ It is considered a best practice in Python to make sure ALL except statements ha
 
 ## Classes
 
+### What is a class?
+
+### Inheritence
+Inheritance is the ability to take properties and methods from a parent class down to a child class. In the example below, we will have two classes: the person class (the parent class in this case) and the teacher class (the child class in this case). The person class will have two properties and a method. The two properties are first name and last name and the method is say_hi which just prints hi. These methods (from the person class) are passed down to the teacher class. The teacher class specifically has one additional property (subject) and two additional methods: teach and grade. The teach method will just print "I am teaching" and the grade method will just print "[first_name] am grading".
+
+    # this is an example of inheritance for classes in python
+
+    # parent class
+    class Person:
+
+        def __init__(self,first_name,last_name):
+            self.first_name = first_name
+            self.last_name = last_name
+
+        def say_hi(self):
+            print("Hi!")
+
+    # child class which inherits the properties of the person class
+    class Teacher(Person):
+
+        def __init__(self, first_name, last_name, subject):
+            super().__init__(first_name, last_name) # This is what passes the class properties and methods down
+            self.subject = subject
+
+        def teach(self):
+            print(f"I am teaching {self.subject}.")
+
+        def grade(self):
+            print(f'{self.first_name} is grading.')
+
+    brian = Teacher("Brian","Murray","Math")
+    
+### Next classes topic
+
+print(brian.say_hi())
+print(brian.grade())
 
 ## Scope
 
@@ -245,7 +294,7 @@ It is considered a best practice in Python to make sure ALL except statements ha
 
 ### Local Scope
 
-By default, each variable created only has local scope. This, for example, means that if a variable is created in a function, it is only accessible from the function. There are ways to change this should the variable be needed outside the scope of the function.
+By default, each variable created only has local scope. This, for example, means that if a variable is created in a function, it is only accessible from the function. There are ways to change this should the variable be needed outside the scope of the function. 
 
 ### Nonlocal Scope (example done)
 
@@ -312,5 +361,11 @@ The fibonacci number algorithm is a classic example of using recursive functions
     
 ## Next Algorithm
 
+# Testing
 
+## What is testing and why is it important?
+
+## Unit Testing
+
+## PyTest
 
