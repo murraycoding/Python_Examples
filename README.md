@@ -253,6 +253,53 @@ It is considered a best practice in Python to make sure ALL except statements ha
 
 ### What is a class?
 
+### Classes sharing other classes
+While this example may seem crazy, I was searching for this answer and wanted to write it up in the notes before I forgot it. So here it is with a decent example of what this is talking about. 
+
+In the example below there are two studens (brian and kyle) both from the Student class. The Student class has a name (string), a grade (integer) and a course (this will be another object). A different class is defined for each course the students can take for math class. The course class has a name and a number of chapters. Below the class definitions, Algebra1 (a course) is created and two students are defined: brian and kyle. They are each given a name and grade and both assigned Algebra1 (the Course object) as their course (THIS IS THE WHOLE POINT OF THESE NOTES). As the example shows, both Brian and Kyle can access the properties and methods of the class. The attributes of the Algebra1 object can be edited by first calling brian (Student) and then for Kyle it will also be changed. See the last few lines of the code example for what this looks like.
+
+    # the class the two objects will come from
+    # the two students will share the same course
+    class Student:
+
+        def __init__(self, name, grade, course):
+            self.name = name    # string
+            self.grade = grade  # integer
+            self.course = course  # Course object
+
+        def __repr__(self):
+            return f'My name is {self.name}.'
+
+        def print_grade(self):
+            return f'{self.name} is in grade {self.grade}.'
+
+
+    # Course class - both students will share an instance of the course class as their course
+    class Course:
+
+        def __init__(self, name, chapters):
+            self.name = name         # string
+            self.chapters = chapters # integers
+
+        def print_chapters(self):
+            return f'{self.name} has {self.chapters} chapters'
+
+
+    # defining Algebra1 to be an instance of the course class
+    Algebra1 = Course("Algebra 1",6)
+
+    brian = Student("Brian", 9, Algebra1)
+    kyle = Student("Kyle", 10, Algebra1)
+
+    # both brian (Student) and kyle (Student) can access the properties from Algebra1 (Course)
+    print(brian.course.print_chapters())
+    print(kyle.course.print_chapters())
+
+    # an Algebra1 property changed by brian (Student) has also been changed for Kyle
+    brian.course.name = "Algebra 2"
+
+    print(kyle.course.name)  # Result = Algebra 2
+
 ### Inheritence
 Inheritance is the ability to take properties and methods from a parent class down to a child class. In the example below, we will have two classes: the person class (the parent class in this case) and the teacher class (the child class in this case). The person class will have two properties and a method. The two properties are first name and last name and the method is say_hi which just prints hi. These methods (from the person class) are passed down to the teacher class. The teacher class specifically has one additional property (subject) and two additional methods: teach and grade. The teach method will just print "I am teaching" and the grade method will just print "[first_name] am grading".
 
