@@ -253,7 +253,7 @@ It is considered a best practice in Python to make sure ALL except statements ha
 
 ### What is a class?
 
-### Classes sharing other classes
+### Classes sharing other classes (example done)
 While this example may seem crazy, I was searching for this answer and wanted to write it up in the notes before I forgot it. So here it is with a decent example of what this is talking about. 
 
 In the example below there are two studens (brian and kyle) both from the Student class. The Student class has a name (string), a grade (integer) and a course (this will be another object). A different class is defined for each course the students can take for math class. The course class has a name and a number of chapters. Below the class definitions, Algebra1 (a course) is created and two students are defined: brian and kyle. They are each given a name and grade and both assigned Algebra1 (the Course object) as their course (THIS IS THE WHOLE POINT OF THESE NOTES). As the example shows, both Brian and Kyle can access the properties and methods of the class. The attributes of the Algebra1 object can be edited by first calling brian (Student) and then for Kyle it will also be changed. See the last few lines of the code example for what this looks like.
