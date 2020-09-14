@@ -149,6 +149,8 @@ There are other ways to use the zip function. See the for loops below for two ex
     Three and Four
     Five and Six
 
+#### Index (need example)
+... and notes.
 
 ### Lambda Functions (example done)
 
