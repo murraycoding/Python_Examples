@@ -30,6 +30,11 @@ You can use python without executing a prewritten program or script. In order to
 
 #### Booleans
 
+#### NoneType
+The keyword 'None' in Python is used to define a variable which has a null value or no value at all. It is distinctly different than 0, False or an empty string since it has its own datatype (NoneType). The data type NoneType can only be equal to None.
+
+
+
 
 ## Contol flow
 
