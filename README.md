@@ -388,12 +388,49 @@ These are the notes on the python standard library.
 ### Random package
 
 ## Pandas
-Please note that when using Pandas, it is a common practice to use an alias instead of the whole "Pandas" word. See the code below for the pandas import statement.
+Please note that when using Pandas, it is a common practice to use an alias instead of the whole "Pandas" word. See the code below for the pandas import statement. This will be used in the notes for the whole section on pandas notes.
     
     import pandas as pd
     
-### How to read CSV files using Pandas
+### Reading and getting information from CSV files
+Pandas gives a read csv method. This method is used to write the information into memory. In the example in the data, we are working with covid data from italy on a day-by-day basis. This example will be used throughout the notes on panadas. 
 
+    covid_df = pd.read_csv('italy-covid-daywise.csv')
+    
+The 'df' in the example is used because using this method within pandas creates a 'data frame'. Checking the type of covid_df will return the dataframe type within pandas
+
+    type(covid_df) # Result = pandas.core.frame.DataFrame
+
+#### Info Method
+Using the info command will return information such as the number of entries, the number of columns and the names of the columns. This can be usedful when looking at a new data set.
+
+    covid_fd.info()  # Result = *important infomation*
+
+#### Decribe Method
+The descirbe method also gives important statistical information about the data in the dataset. Some of these pieces of information include the count, mean, standard deviatoin, the quartiles, etc.
+
+    covid_df.describe()
+    
+#### Column property
+This property is the names of all of the columns in the data set as a list. Note this property has no parenthesis since it is a property of the dataset and not a method.
+
+    covid_df.columns
+    
+#### The Shape property
+This property will give the number of rows and columns as a tuple. This is similar to the shape property in NumPy
+
+    covid_df.shape
+
+### Getting data from dataframes in Pandas
+This section will look at extracting information from a dataframe.
+
+#### The format of data in Pandas
+To best understand Pandas, it is good to first understand how the data is structured in a pandas. Typically, the data is set in a dictionary of lists. To demonstrate this, please see the example below. This is just an example but a dataframe is formatted in this way.
+
+    covid_data_dict = {
+        'date': ['2020-08-30','2020-08-31', ... ],
+        'new_cases': [1234, 1432, 1443, 3211, ... ]
+    }
 ## NumPy
 
 # Algorithms
