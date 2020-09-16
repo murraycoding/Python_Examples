@@ -150,7 +150,7 @@ There are other ways to use the zip function. See the for loops below for two ex
     Five and Six
 
 #### Index (need example)
-... and notes.
+The index method on lists will search for a given value and two optional parameters of the start index and end index of the search. For example, it may be useful to find the index of a particular student name in a list of all students names. 
 
 ### Lambda Functions (example done)
 
