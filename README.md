@@ -392,6 +392,11 @@ Please note that when using Pandas, it is a common practice to use an alias inst
     
     import pandas as pd
     
+### Data types in Pandas
+
+#### Series
+Series is a special data type in Pandas which is essentially a numPy array with an index. This index must be hashable, meaning it has a label next to the value in the array (either an integer or string label).
+    
 ### Reading and getting information from CSV files
 Pandas gives a read csv method. This method is used to write the information into memory. In the example in the data, we are working with covid data from italy on a day-by-day basis. This example will be used throughout the notes on panadas. 
 
@@ -431,6 +436,29 @@ To best understand Pandas, it is good to first understand how the data is struct
         'date': ['2020-08-30','2020-08-31', ... ],
         'new_cases': [1234, 1432, 1443, 3211, ... ]
     }
+    
+Based on the structure, to get the second new cases number the code would be the following: (keep in mind the indexing starts at zero)
+
+    covid_data_dict['new_cases'][1]
+
+#### The 'at' method
+The at method is also a way to get data from a dataframe in python. The code would produce the same result as using the object notation given above. In this case, we will use the actual pandas dataframe 'covid_df' to get the case number at index 246.
+
+    covid_df.at[246, 'new_cases']
+
+#### Subsets of data
+You can also pass a subset of columns names, in the form of a list to get the data from just those columns. In the example below, just the date and the number of new cases is pulled out from the covid data frame.
+
+    covid_df[['date','new_cases']]
+
+Making a data in the subset will ultimately change the original dataframe
+    
+#### Getting a copy of the dataframe
+Sometimes it may be useful to create a copy of the dataframe. Im this case, you can use the copy method. The code below creates a copy of the covid_df dataframe.
+
+    covid_df_copy = covid_df.copy()
+    
+
 ## NumPy
 
 # Algorithms
