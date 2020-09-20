@@ -207,6 +207,11 @@ A decorator is a function which wraps around another function. It essentially pr
 ### Recursive Functions (example done)
 A recursive function is one that calls itself as a part of the function. The famous example of this is to find the nth fibonnaci number. The function to do this only is defined to find the number before it. Within the function, there is another function call to find the number before it, and so on. The only acception to this is if the function is trying to determine the first or second fibonnaci numbers. In this case, both the first and second are equal to 1. The example below described the function I am talking about. The code example will be in the algorithms folder.
 
+### Generators
+
+#### What is a generator?
+A generator function allows you to declare a function which behaves like an interator, it can be used in a for loop. This greatly sinplifies your code and is much more memory efficient than a simple for loop.
+
 ## Data Structures
 
 ## Input and Output
