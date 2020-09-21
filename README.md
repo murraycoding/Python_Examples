@@ -466,6 +466,41 @@ Sometimes it may be useful to create a copy of the dataframe. Im this case, you 
 
 ## NumPy
 
+## MatPlotLib
+
+### What is MatPlotLib and Seaborn
+This library helps to translate numbers into visual graphs. Seaborn is a library which is built on top of MatPlotLib which help to simplify much of the code needed to make the charts from matplotlib. In the code, we will be using aliases for both of the libraries. With the aliases, the import statements should look like the following.
+
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    %matplotlib inline  # this line tells the program the graphs should be inline instead of popups
+    
+### Line Charts
+A series of markers or data connected by a single line. The data we will work with for this example is the annual yield of apples in tons per hectre for kanto (an imaginary country). 
+
+    yeild_apples = [0.895, 0.91, 0.919, 0.926, 0.929, 0.931]
+    
+We can visualize this data with a line chart. To draw the line chart, we can plot a line chart using the plt.plot function.
+
+    plt.plot(yeild_apples)
+    
+ This code will return the graph and a code which represents the 2D line chart object. If you are just concerned with the graph and not the code of the object, then just add a semicolon after the code which produces the graph.
+ 
+#### Customizing the graph
+Along with just plotting the points on the graph, you can also change the values on the x-axis. The code below gives the values for the x and y axis then plots them on the graph. We also in this step include labels for the axis to display what the data is representing.
+
+    years = [2010, 2011, 2012, 2013, 2014, 2015]
+    yield_apples = [0.895, 0.91, 0.919, 0.926, 0.931]
+    
+    plt.plot(years, yield_apples)
+    plt.xlabel('Year')
+    plt.ylabel('Yield (tons per hectare)');
+    
+#### Plotting Multiple Graphs
+In a Jupiter notebook, you can plot multiple lines on the same graph just by including the code to generate the graphs on the same cell (I am assuming you can do this in normal python just by making 
+    
+
+
 # Algorithms
 
 ## Fibonacci Number (example done)
