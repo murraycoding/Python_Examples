@@ -401,6 +401,15 @@ Please note that when using Pandas, it is a common practice to use an alias inst
 
 #### Series
 Series is a special data type in Pandas which is essentially a numPy array with an index. This index must be hashable, meaning it has a label next to the value in the array (either an integer or string label).
+
+#### Dataframes
+The dataframe is the main type of data in pandas. It is the way pandas represents a typical spreadsheet. While this dataset is special to pandas, it can be thought of as just a dictionary of lists. To demonstrate this, please see the example below. This is just an example but a dataframe is formatted in this way.
+
+    covid_data_dict = {
+        'date': ['2020-08-30','2020-08-31', ... ],
+        'new_cases': [1234, 1432, 1443, 3211, ... ]
+    }
+    
     
 ### Reading and getting information from CSV files
 Pandas gives a read csv method. This method is used to write the information into memory. In the example in the data, we are working with covid data from italy on a day-by-day basis. This example will be used throughout the notes on panadas. 
@@ -434,14 +443,7 @@ This property will give the number of rows and columns as a tuple. This is simil
 ### Getting data from dataframes in Pandas
 This section will look at extracting information from a dataframe.
 
-#### The format of data in Pandas
-To best understand Pandas, it is good to first understand how the data is structured in a pandas. Typically, the data is set in a dictionary of lists. To demonstrate this, please see the example below. This is just an example but a dataframe is formatted in this way.
 
-    covid_data_dict = {
-        'date': ['2020-08-30','2020-08-31', ... ],
-        'new_cases': [1234, 1432, 1443, 3211, ... ]
-    }
-    
 Based on the structure, to get the second new cases number the code would be the following: (keep in mind the indexing starts at zero)
 
     covid_data_dict['new_cases'][1]
@@ -462,6 +464,9 @@ Making a data in the subset will ultimately change the original dataframe
 Sometimes it may be useful to create a copy of the dataframe. Im this case, you can use the copy method. The code below creates a copy of the covid_df dataframe.
 
     covid_df_copy = covid_df.copy()
+
+### Dealing with missing data
+
     
 
 ## NumPy
