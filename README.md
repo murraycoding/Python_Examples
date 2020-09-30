@@ -384,7 +384,11 @@ In creating the square function, I will attempt to pass a different value of n (
     cubed = exp(3)
 
     cubed(4) -> 16   # not equal to 64 as intended
-    
+
+# Regular Expressions (Regex)
+This is a major section because I plan to do a lot of data parsing and transforming. I would like to record all notes and regular examples of common patterns and best use cases that I use in lots of projects.
+
+
 # Python Libraries
 
 ## Standard Library
