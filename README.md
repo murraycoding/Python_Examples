@@ -403,8 +403,13 @@ Please note that when using Pandas, it is a common practice to use an alias inst
     
 ### Data types in Pandas
 
+#### Checking the type of a dataset or value in pandas
+
+
 #### Series
-Series is a special data type in Pandas which is essentially a numPy array with an index. This index must be hashable, meaning it has a label next to the value in the array (either an integer or string label).
+Series is a special data type in Pandas which is essentially a numPy array with an index. This index must be hashable, meaning it has a label next to the value in the array (either an integer or string label). For the index, you can either set the index with a list of values (the list must be the same length of the dataset) or if no index is specified, then one will be automatically provided in the form 0, 1, 2, ... , n-1. 
+
+Each series also should have all data of the same type whenever possible. If it is not the same type, trying to find the datatype of the series will return 'object'. It is also important to note that if the data type is not consistent then some pandas functions will not work properly.
 
 #### Dataframes
 The dataframe is the main type of data in pandas. It is the way pandas represents a typical spreadsheet. While this dataset is special to pandas, it can be thought of as just a dictionary of lists. To demonstrate this, please see the example below. This is just an example but a dataframe is formatted in this way.
