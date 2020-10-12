@@ -48,8 +48,21 @@ In general, the walrus operator can assign a whole expression to a variable. Whi
     
 Both examples will print true at the end. However, the lower example saves the extra line. Technically in the later example did NOT print 'walrus_var', it just printed the value True. However it also saved the value of True to the variable named 'walrus var'. This is how the operator works, when the line is used, the program will use just the value of the expression and then it will assign the same result to the variable.
 
-For a more advanced example, consider a while loop.
+For a more advanced example, consider a while loop. In this case, we will ask the user for a number, if the number is greater than 5, we will appen it to the list of numbers. If not, the program will quit. Similar to the last example, the example will be a non-walrus example, followed by the same example with a walrus operator.
 
+    # No Walrus operator
+    num_list = []
+    number = input("What is your number? ")
+    while number > 5:
+        num_list.append(number)
+        number = input("What is your number? ")
+
+    # With Walrus Operator
+    num_list = []
+    while (number := input("What is your number? ") > 5:
+        num_list.append(number)
+
+ 
 
 ## Contol flow
 
