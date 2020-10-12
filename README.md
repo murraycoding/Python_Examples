@@ -34,6 +34,21 @@ You can use python without executing a prewritten program or script. In order to
 The keyword 'None' in Python is used to define a variable which has a null value or no value at all. It is distinctly different than 0, False or an empty string since it has its own datatype (NoneType). The data type NoneType can only be equal to None.
 
 
+### Operators
+
+#### Walrus Operator (Formally, assignment expressions)
+In general, the walrus operator can assign a whole expression to a variable. While you can do this without the walrus operator, in many use cases, you want to then use the result of the expression right away. The most basic of all of the examples is just to declare a variable and print it in the same line. The example below shows that before Python 3.8, it would take 2 lines to accomplish this. However, with the walrus operator, you only need one.
+
+    # No Walrus operator
+    walrus_var = True
+    print(walrus_var)
+    
+    # With Walrus operator
+    print(walrus_var := True)
+    
+Both examples will print true at the end. However, the lower example saves the extra line. Technically in the later example did NOT print 'walrus_var', it just printed the value True. However it also saved the value of True to the variable named 'walrus var'. This is how the operator works, when the line is used, the program will use just the value of the expression and then it will assign the same result to the variable.
+
+For a more advanced example, consider a while loop.
 
 
 ## Contol flow
