@@ -59,7 +59,7 @@ For a more advanced example, consider a while loop. In this case, we will ask th
 
     # With Walrus Operator
     num_list = []
-    while (number := input("What is your number? ") > 5:
+    while number := input("What is your number? ") > 5:
         num_list.append(number)
 
  
