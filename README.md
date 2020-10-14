@@ -293,6 +293,9 @@ It is considered a best practice in Python to make sure ALL except statements ha
 
 ### What is a class?
 
+### Interfaces
+An interface acts as a blue print for classes. This topic is so big that it will require a whole week of research and examples.
+
 ### Classes sharing other classes (example done)
 While this example may seem crazy, I was searching for this answer and wanted to write it up in the notes before I forgot it. So here it is with a decent example of what this is talking about. 
 
