@@ -21,6 +21,21 @@ You can use python without executing a prewritten program or script. In order to
     ... else:
     ...     print('x is not equal to 4')
     x is not equal to 4
+    
+### Type Hinting
+Types are something that traditionally are not found in a dynamically typed language. However, to make debugging easier you can declare types of your variables and function outputs. The following example is a simple function which checks to see if an integer is greater than 5. The first version of this is one with no type hinting and the second is with type hinting. Technically speaking, the type hinting does nothing to the code. All it will do is alert the user of the types expected and the expected output from the functions.
+
+    # No type hinting
+    def greater_than_five(num):
+        return num > 5
+        
+    # Type hinting
+    def greater_than_five(num: int) -> bool:
+        return num > 5
+        
+While this may seem like a small change, most IDE's will take the information and create reminders of the specific types needed when you are calling a particular function. It will also not block the output of the function if the wrong types are used. This is just something to keep you organized. 
+
+In a recent update to Python, you can now also check many other types by default such as lists and tuples.
 
 ### Data Types
 
