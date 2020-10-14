@@ -21,8 +21,9 @@ You can use python without executing a prewritten program or script. In order to
     ... else:
     ...     print('x is not equal to 4')
     x is not equal to 4
-    
-### Type Hinting
+### Data Types
+
+#### Type Hinting
 Types are something that traditionally are not found in a dynamically typed language. However, to make debugging easier you can declare types of your variables and function outputs. The following example is a simple function which checks to see if an integer is greater than 5. The first version of this is one with no type hinting and the second is with type hinting. Technically speaking, the type hinting does nothing to the code. All it will do is alert the user of the types expected and the expected output from the functions.
 
     # No type hinting
@@ -37,7 +38,12 @@ While this may seem like a small change, most IDE's will take the information an
 
 In a recent update to Python, you can now also check many other types by default such as lists and tuples.
 
-### Data Types
+#### Type Alliases
+There are many instances where it is useful to use the same type of information over and over again in the same program. This is where type alliases come in. For example, in math, a vector is a list of values (techincally a one-dimensional array). In Python, we can create a special data type just for vectors. Then, we can use that custom "type" later. In the example below, we define 'vector' as a list of floats and then vector_collection as a list of vectors (just made up for notes purposes).
+
+    # define the new type vector
+    Vector = list[float]
+    Vector_Collection = list[Vector]
 
 #### Numbers
 
