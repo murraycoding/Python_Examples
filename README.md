@@ -24,6 +24,8 @@ You can use python without executing a prewritten program or script. In order to
 ### Data Types
 
 #### Type Hinting
+This is just a small part of the type hints notes. For a full overview of all of the type things check out the documentation [here](https://docs.python.org/3/library/typing.html)
+
 Types are something that traditionally are not found in a dynamically typed language. However, to make debugging easier you can declare types of your variables and function outputs. The following example is a simple function which checks to see if an integer is greater than 5. The first version of this is one with no type hinting and the second is with type hinting. Technically speaking, the type hinting does nothing to the code. All it will do is alert the user of the types expected and the expected output from the functions.
 
     # No type hinting
