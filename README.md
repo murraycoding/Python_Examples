@@ -5,6 +5,23 @@ This will be where all notes will be regarding things which are normally in Pyth
 ## Basics
 All of the basics of Python. Things to know just to get started writing a simple program
 
+### Formatted Strings (f-strings)
+While 'string' is a data type, the formatted string, or f-string for short, is a quick way to input variables into your code. If the variable 'name' is equal to 'Brian' then you can write the following:
+
+    # f-string example
+    name = 'Brian'
+    print(f'My name is {name}.')
+    
+    Output: My name is Brian.
+    
+The only required syntax is to type an f before the quotation marks for the string and to put any variable name in curly braces. Beyond this, introduced in Python 3.8 (I think) was a shorthand notation to print the variable name and what is equal to within a formatted string. In the example below, I just define the name variable and then print out what it is equal to. The only difference from before is that an equals sign is added right after the variable name.
+
+    # advanced f-string variable
+    name = 'Brian'
+    print(f'{name=}')
+    
+    Output: name=Brian
+
 ### The print method
 The print statement is one of the most fundamental things in Python. This can be used for debugging, writing things to a command line and many others. 
 
