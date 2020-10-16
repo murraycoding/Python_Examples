@@ -271,6 +271,9 @@ A decorator is a function which wraps around another function. It essentially pr
 
     print('Decorator')
     print(add_dec(-2,-3)) -> 5
+    
+#### Data Class Decorator
+A data class requires a decorator of '@dataclass'. For more information on dataclasses, see the section on dataclasses under the classes section.
 
 ### Recursive Functions (example done)
 A recursive function is one that calls itself as a part of the function. The famous example of this is to find the nth fibonnaci number. The function to do this only is defined to find the number before it. Within the function, there is another function call to find the number before it, and so on. The only acception to this is if the function is trying to determine the first or second fibonnaci numbers. In this case, both the first and second are equal to 1. The example below described the function I am talking about. The code example will be in the algorithms folder.
@@ -336,7 +339,33 @@ It is considered a best practice in Python to make sure ALL except statements ha
 ### Interfaces
 An interface acts as a blue print for classes. This topic is so big that it will require a whole week of research and examples.
 
-### Classes sharing other classes (example done)
+### Data Classes
+To create a dataclass, all you need to do is add the decorator @dataclass to any class. A dataclass is similar to a class but it gives you built in methods you typically need to type out. It also supports type hinting when you declare variables. Below, is an example of a dataclass. After the example, the notes will show what is built-in for the class.
+
+    # example of dataclasses
+    from dataclasses import dataclass
+
+    @dataclass
+    class Example():
+        """ This is an example class for dataclass notes """
+        name: str
+        age: int
+        height: float
+        alive: bool
+    
+    # creates new object based on example class
+    test = Example('Brian', 30, 75.5, True)
+    
+    # no __repr__ method needed when working with a dataclass
+    print(test)
+    
+    Output = Example(name='Brian', age=30, height=75.5, alive=True)
+
+As you can see, the \_\_init\_\_ method is already built in all you need to do is list the variables. I have also used type hinting to declare the types of the variables as well. Besides the init method, these are the built-in methods and attributes for dataclasses and the default values they take on. Keep in mind you can alter these as well. init=True, repr=True, eq=True, order=False, unsafe_hash=False, frozen=False
+
+In the example for dataclasses, you can see the output gives the format for the \_\_repr\_\_ method.
+
+### Classes sharing other classes
 While this example may seem crazy, I was searching for this answer and wanted to write it up in the notes before I forgot it. So here it is with a decent example of what this is talking about. 
 
 In the example below there are two studens (brian and kyle) both from the Student class. The Student class has a name (string), a grade (integer) and a course (this will be another object). A different class is defined for each course the students can take for math class. The course class has a name and a number of chapters. Below the class definitions, Algebra1 (a course) is created and two students are defined: brian and kyle. They are each given a name and grade and both assigned Algebra1 (the Course object) as their course (THIS IS THE WHOLE POINT OF THESE NOTES). As the example shows, both Brian and Kyle can access the properties and methods of the class. The attributes of the Algebra1 object can be edited by first calling brian (Student) and then for Kyle it will also be changed. See the last few lines of the code example for what this looks like.
