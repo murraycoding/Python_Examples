@@ -617,7 +617,14 @@ In a Jupiter notebook, you can plot multiple lines on the same graph just by inc
 
 # Algorithms
 
-## Fibonacci Number (example done)
+## Sorting Algorithms
+
+### Insertion Sort
+
+
+## Other Algorithms
+
+### Fibonacci Number (example done)
 The fibonacci number algorithm is a classic example of using recursive functions. In the function to find the nth fibonacci number, the function will call itself to find previous numbers in the sequence. The sequence is the following 1,1,2,3,5,8,13,21,... The example below gives (not the fastest) the most common approach to find the nth fibonacci number.
 
     # function to find the nth fibonacci number
@@ -632,7 +639,7 @@ The fibonacci number algorithm is a classic example of using recursive functions
 
     print(fib_num(8)) # Result = 21
     
-## Next Algorithm
+## 
 
 # Testing
 
